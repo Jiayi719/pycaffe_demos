@@ -140,7 +140,6 @@ def main():
     deploy_proto = './deploy.prototxt'
     with open(deploy_proto, 'w') as f:
         f.write(str(mobilenet(data=deploy_data, num_classes=9)))
-    deploy_net = caffe.Net(deploy_proto, weights, caffe.TEST)
 
     # train
     train_source = './data/train_shuffled.txt'
@@ -150,7 +149,6 @@ def main():
     train_proto = './train.prototxt'
     with open(train_proto, 'w') as f:
         f.write(str(mobilenet(data=train_data, label=train_label, num_classes=9)))
-    train_net = caffe.Net(train_proto, weights, caffe.TEST)
 
     # test
     test_source = './data/test_shuffled.txt'
@@ -160,7 +158,6 @@ def main():
     test_proto = './test.prototxt'
     with open(test_proto, 'w') as f:
         f.write(str(mobilenet(data=test_data, label=test_label, num_classes=9)))
-    test_net = caffe.Net(test_proto, weights, caffe.TEST)
 
 
 if __name__ == '__main__':
