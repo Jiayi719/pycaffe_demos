@@ -4,6 +4,8 @@
 使用pycaffe，生成ResNet基于caffe的网络定义文件
 '''
 
+import sys
+sys.path.insert(0, '/home/ubt/caffe/python')
 import caffe
 from caffe import layers as L
 from caffe import params as P
